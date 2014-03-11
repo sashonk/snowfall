@@ -1,0 +1,54 @@
+
+snowfall.png
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+snowflake1
+  rotate: false
+  xy: 1, 70
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+snowflake2
+  rotate: false
+  xy: 131, 70
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+snowflake3
+  rotate: false
+  xy: 261, 70
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+snowflake4
+  rotate: false
+  xy: 391, 70
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+button
+  rotate: false
+  xy: 1, 4
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: -1
+button_down
+  rotate: false
+  xy: 521, 134
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: -1
+background
+  rotate: false
+  xy: 1, 1
+  size: 1, 1
+  orig: 1, 1
+  offset: 0, 0
+  index: -1
