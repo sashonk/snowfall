@@ -2,9 +2,11 @@ package com.me.snowfall;
 
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
+import com.badlogic.gdx.scenes.scene2d.ui.Image;
 import com.badlogic.gdx.scenes.scene2d.ui.Label;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
 import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
+import com.badlogic.gdx.scenes.scene2d.utils.Align;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 
 public class NoFreeScreen extends MenuScreen{
@@ -18,7 +20,13 @@ public class NoFreeScreen extends MenuScreen{
 	public void show() {
 		
 		Table table = new Table();
-		Label label = new Label("В бесплатной версии недоступно\nПриобретайте платную версию и играйте", getSnowfall().getManager().getSkin());
+		Label label = new Label("В бесплатной версии недоступно\nПриобретайте платную версию и играйтеВ бесплатной версии недоступно\nПриобретайте платную версию и играйтеВ бесплатной версии недоступно\nПриобретайте платную версию и играйтеВ бесплатной версии недоступно\nПриобретайте платную версию и играйтеВ бесплатной версии недоступно\nПриобретайте платную версию и играйтеВ бесплатной версии недоступно\nПриобретайте платную версию и играйте", getSnowfall().getManager().getSkin());
+		label.setAlignment(Align.center, Align.center);
+		
+		Image sveta = new Image(getSnowfall().getManager().getAtlas().findRegion("sveta"));
+		sveta.setSize(100, 100);
+		
+		
 		TextButton back = new TextButton("Назад", getSnowfall().getManager().getSkin(), "menu");
 		back.addListener(new ClickListener(){
 			public void clicked (InputEvent event, float x, float y) {
@@ -30,6 +38,7 @@ public class NoFreeScreen extends MenuScreen{
 		
 		table.defaults().pad(2);
 		table.add(label).row();
+		table.add(sveta).row();
 		table.add(back);
 		
 		table.pack();
