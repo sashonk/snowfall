@@ -2,9 +2,11 @@ package com.me.snowfall;
 
 
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.audio.Sound;
 import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.InputListener;
+import com.badlogic.gdx.scenes.scene2d.ui.Image;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
 import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
 import com.badlogic.gdx.scenes.scene2d.utils.ChangeListener;
@@ -18,13 +20,18 @@ public class MainMenuScreen extends MenuScreen{
 
 	@Override
 	public void show() {
+		
+	
+		
+		final Sound beep = getSnowfall().getManager().getAssetManager().get("data/beep.wav", Sound.class);
 	
 		Table table = new Table();
 		TextButton tbStart = new TextButton("Играть", getSnowfall().getManager().getSkin(), "menu");
 		tbStart.addListener(new ClickListener(){
 			public void clicked (InputEvent event, float x, float y) {
 				Snowfall sf = MainMenuScreen.this.getSnowfall();
-				sf.setScreen(sf.findScreen("nofree"));
+				sf.setScreen(sf.findScreen("game"));
+				//beep.play(1);
 			}
 		});
 		

@@ -3,51 +3,58 @@ snowfall.png
 format: RGBA8888
 filter: Nearest,Nearest
 repeat: none
-sveta
+mountain
   rotate: false
-  xy: 1, 264
-  size: 512, 515
-  orig: 512, 515
+  xy: 1, 156
+  size: 430, 313
+  orig: 430, 313
+  offset: 0, 0
+  index: -1
+clock
+  rotate: false
+  xy: 1, 4
+  size: 150, 150
+  orig: 150, 150
   offset: 0, 0
   index: -1
 snowflake1
   rotate: false
-  xy: 1, 134
+  xy: 433, 341
   size: 128, 128
   orig: 128, 128
   offset: 0, 0
   index: -1
 snowflake2
   rotate: false
-  xy: 515, 651
+  xy: 153, 26
   size: 128, 128
   orig: 128, 128
   offset: 0, 0
   index: -1
 snowflake3
   rotate: false
-  xy: 1, 4
+  xy: 433, 211
   size: 128, 128
   orig: 128, 128
   offset: 0, 0
   index: -1
 snowflake4
   rotate: false
-  xy: 131, 134
+  xy: 563, 341
   size: 128, 128
   orig: 128, 128
   offset: 0, 0
   index: -1
 button
   rotate: false
-  xy: 515, 585
+  xy: 283, 90
   size: 64, 64
   orig: 64, 64
   offset: 0, 0
   index: -1
 button_down
   rotate: false
-  xy: 645, 715
+  xy: 563, 275
   size: 64, 64
   orig: 64, 64
   offset: 0, 0

@@ -2,7 +2,9 @@ package com.me.snowfall;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.assets.AssetManager;
+import com.badlogic.gdx.audio.Sound;
 import com.badlogic.gdx.graphics.Color;
+import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.NinePatch;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
@@ -46,9 +48,13 @@ public class ResourceManager {
 		return atlas;
 	}
 	
+	
+	
 	public ResourceManager(){
 		assetManager = new AssetManager();
 		assetManager.load("data/snowfall.pack", TextureAtlas.class);
+		assetManager.load("data/beep.wav", Sound.class);
+		assetManager.load("data/tick.wav", Sound.class);
 		assetManager.finishLoading();
 		
 		
@@ -60,14 +66,18 @@ public class ResourceManager {
 		skin.add("button", new NinePatch(atlas.findRegion("button"), 16,16,16,16)) ;
 		skin.add("button_down",  new NinePatch(atlas.findRegion("button_down"), 16,16,16,16));
 		
+		NinePatch patch = new NinePatch(atlas.findRegion("clock"), 16,16,16,16);
+		skin.add("clock", patch);
 		
 		FreeTypeFontGenerator menuFontGenerator = new FreeTypeFontGenerator(Gdx.files.internal("data/main.ttf"));
 		BitmapFont menuFont18 = menuFontGenerator.generateFont(18, FreeTypeFontGenerator.DEFAULT_CHARS.concat(CHARS), false);
 		BitmapFont menuFont36 = menuFontGenerator.generateFont(36, FreeTypeFontGenerator.DEFAULT_CHARS.concat(CHARS), false);
+		BitmapFont menuFont72 = menuFontGenerator.generateFont(72, FreeTypeFontGenerator.DEFAULT_CHARS.concat(CHARS), false);
 
 		menuFontGenerator.dispose();
 		skin.add("menu", menuFont36);
 		skin.add("default", menuFont18);
+		skin.add("big", menuFont72);
 
 		TextButtonStyle tbMenuStyle = new TextButtonStyle();
 		tbMenuStyle.up = skin.getDrawable("button");
@@ -75,12 +85,23 @@ public class ResourceManager {
 		tbMenuStyle.overFontColor = Color.YELLOW.cpy();
 		tbMenuStyle.font = skin.getFont("menu");
 		tbMenuStyle.fontColor = Color.WHITE.cpy();
+		tbMenuStyle.pressedOffsetX =2;
+		tbMenuStyle.pressedOffsetY = -2;
 		skin.add("menu", tbMenuStyle);
 	
+		
+		LabelStyle lStyleMenu = new LabelStyle();
+		lStyleMenu.font = skin.getFont("big");
+		lStyleMenu.fontColor = Color.BLACK.cpy();
+		lStyleMenu.background = skin.getDrawable("clock");
+		skin.add("big", lStyleMenu);
 		
 		LabelStyle lStyle = new LabelStyle();
 		lStyle.font = skin.getFont("default");
 		lStyle.fontColor = Color.WHITE.cpy();
+		
+
+		
 		skin.add("default", lStyle);
 
 	}

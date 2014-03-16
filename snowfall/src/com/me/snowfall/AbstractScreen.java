@@ -4,6 +4,8 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.InputProcessor;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.GL10;
+import com.badlogic.gdx.graphics.g2d.TextureAtlas;
+import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 
 public abstract class AbstractScreen implements Screen{
@@ -24,7 +26,7 @@ public abstract class AbstractScreen implements Screen{
 
 	public AbstractScreen(Snowfall theGame){
 		theGameInstance = theGame;
-		stage = new Stage(1024, 768, true);
+		stage = new Stage(1024, 768, false);
 		
 	}
 	
@@ -43,7 +45,9 @@ public abstract class AbstractScreen implements Screen{
 		
 	}
 
-
+	public TextureRegion findRegion(String name){
+		return theGameInstance.getManager().getAtlas().findRegion(name);
+	}
 
 	@Override
 	public void hide() {
